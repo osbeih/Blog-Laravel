@@ -13,8 +13,9 @@
         <a class="navbar-brand" href="/test">Blogs</a>
     </div>
     </nav>
-    <div class="container">
-            <table class="table mt-5">
+    <div class="container mt-5" >
+        <a class="btn btn-success">Create Post</a>
+            <table class="table">
                 <thead>
                     <tr>
                     <th scope="col">Id</th>
@@ -25,7 +26,7 @@
                     </tr>
                 </thead>
                 <tbody>
-                    @foreach ($posts as $post ):
+                    @foreach ($posts as $post )
                     <tr>
                     <th scope="row">{{ $post['id'] }}</th>
                     <td>{{ $post['title'] }}</td>
