@@ -10,6 +10,6 @@ Route::get('/', function () {
 
 // Route::get('/test2', [TestController::class, 'testAction']); // example
 
-Route::get("/posts" , [PostController::class, 'index']);
+Route::get("/posts", [PostController::class, 'index'])->name('posts.index');
 
 Route::get("/posts/{post}", [PostController::class, 'show'])->name('posts.show');
