@@ -13,7 +13,7 @@ class PostController extends Controller
             ['id' => 2, 'title' => "JS", 'posted_by' => 'Odeh', 'created_at' => '26-aug-01'],
         ];
 
-        return view("test", [
+        return view("index", [
             "posts" => $posts,
         ]);
     }
