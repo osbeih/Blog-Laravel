@@ -2,9 +2,9 @@
 @section('title', 'Posts')
 
 @section('content')
-<div class="container mt-5 p-2">
-    <a class="btn btn-success">Create Post</a>
-    <table class="table">
+<div class="container mt-5 p-1">
+    <a class="btn btn-success" href="{{ route("posts.create") }}">Create Post</a>
+    <table class="table mt-3">
         <thead>
             <tr>
                 <th scope="col">Id</th>
