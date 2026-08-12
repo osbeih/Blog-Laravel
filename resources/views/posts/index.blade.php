@@ -34,7 +34,7 @@
                         <td>{{ $post['posted_by'] }}</td>
                         <td>{{ $post['created_at'] }}</td>
                         <td>
-                            <a class="btn btn-info btn-sm">view</a>
+                            <a class="btn btn-info btn-sm" href="posts/{{ $post['id'] }}">view</a>
                             <a class="btn btn-primary btn-sm">edit</a>
                             <a class="btn btn-danger btn-sm">delete</a>
                         </td>
