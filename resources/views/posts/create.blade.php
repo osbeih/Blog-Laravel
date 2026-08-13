@@ -14,10 +14,6 @@
             <input type="text" class="form-control" id="description" placeholder="description">
             <label for="description">Description</label>
         </div>
-        <div class="form-floating mb-3">
-            <input type="date" class="form-control" id="created_at" placeholder="created_at">
-            <label for="creatred_at">Created_at</label>
-        </div>
         <a class="btn btn-success" type="submit" href="{{ route('posts.index') }}">Create</a>
     </form>
 </div>

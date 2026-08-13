@@ -10,9 +10,9 @@
 
 <body style="background-color: lightgray;">
     <!-- As a link -->
-    <nav class="navbar bg-primary">
+    <nav class="navbar bg-dark">
         <div class="container-fluid">
-            <a class="navbar-brand" href="{{ route('posts.index') }}">Blogs</a>
+            <a class="navbar-brand" style="color: aliceblue;" href="{{ route('posts.index') }}">Blogs</a>
         </div>
     </nav>
     @yield('content')

@@ -2,16 +2,14 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Post;
 use Illuminate\Http\Request;
 
 class PostController extends Controller
 {
     public function index()
     {
-        $posts = [
-            ['id' => 1, 'title' => "Laravel", 'description' => "this is description", 'posted_by' => 'Ahmad', 'created_at' => '26-aug-03'],
-            ['id' => 2, 'title' => "JS", 'description' => "this is description", 'posted_by' => 'Odeh', 'created_at' => '26-aug-01'],
-        ];
+        $posts = Post::all();
 
         return view("posts.index", [
             "posts" => $posts,
