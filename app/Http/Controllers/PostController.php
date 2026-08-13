@@ -44,7 +44,6 @@ class PostController extends Controller
         // 1 - get data from request data
         $data = $myRequest->all();
 
-
         // 2 - store data
         ## one way
         // Post::create([
@@ -60,6 +59,25 @@ class PostController extends Controller
         // $post->description = $data['description'];
         // $post->save();
 
+        return redirect()->route('posts.index');
+    }
+
+    public function edit($postId)
+    {
+        $postToUpdate = Post::find($postId);
+        return view('posts.edit', ['post' => $postToUpdate]);
+    }
+
+    public function update(Request $request,$postId)
+    {
+        $edit = $request->all();
+
+        $post = Post::find($postId);
+        $post->title = $edit['title'];
+        $post->description = $edit['description'];
+
+        $post->save();
+        
         return redirect()->route('posts.index');
     }
 }

@@ -10,8 +10,18 @@ Route::get('/', function () {
 
 // Route::get('/test2', [TestController::class, 'testAction']); // example
 
+
+
+
+
+Route::get('/posts/{post}/edit', [PostController::class, 'edit'])->name('posts.edit');
+
 Route::post('/posts', [PostController::class, 'store'])->name('posts.store');
+
 Route::get("/posts", [PostController::class, 'index'])->name('posts.index');
 
+Route::patch('/posts/{post}', [PostController::class, 'update'])->name('posts.update');
+
 Route::get("/posts/{post}", [PostController::class, 'show'])->name('posts.show');
+
 Route::get('/posts.create', [PostController::class, 'create'])->name('posts.create');
