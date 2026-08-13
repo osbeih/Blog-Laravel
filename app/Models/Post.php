@@ -8,8 +8,18 @@ class Post extends Model
 {
     protected $fillable = [ // the data accept
         'title',
-        'description'
+        'description',
+        'user_id',
     ];
 
+    // public function userRealation()
+    // {
+    //     return $this->belongsTo(User::class, 'user_id');
+    // }
 
+    ##another Way
+    public function  user()
+    {
+        return $this->belongsTo(User::class);
+    }
 }

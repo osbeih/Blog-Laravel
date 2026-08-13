@@ -16,6 +16,13 @@
             <label for="floatingTextarea2">Description</label>
         </div>
 
+        <select class="form-select mb-3" aria-label="Default select example" name="user_id">
+            <option selected>Post creter</option>
+            @foreach ( $users as $user )
+            <option value="{{ $user->id }}">{{ $user->name }}</option>
+            @endforeach
+        </select>
+
         <button class="btn btn-success" type="submit">Create</a>
     </form>
 </div>

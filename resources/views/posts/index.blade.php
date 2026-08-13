@@ -19,7 +19,7 @@
             <tr>
                 <th scope="row">{{ $post->id }}</th>
                 <td>{{ $post->title }}</td>
-                <td>{{ $post->posted_by }}</td>
+                <td>{{ $post->user ? $post->user->name : "Not Found"}}</td>
                 <td>{{ $post->created_at }}</td>
                 <td>
                     <a class="btn btn-info btn-sm" href="{{ route('posts.show', ['post' => $post['id']]) }}">view</a>

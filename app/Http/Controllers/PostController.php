@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Post;
+use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Redirect;
 
@@ -28,7 +29,9 @@ class PostController extends Controller
 
     public function create()
     {
-        return view('posts.create');
+        $users = User::all();
+
+        return view('posts.create', ['users' => $users]);
     }
 
     public function store(Request $myRequest) // Request == request()
@@ -51,7 +54,6 @@ class PostController extends Controller
 
         ##onther Way
         Post::create($data);
-
         ##More Way // with this syntax we dont need fillable in a Model
         // $post = new Post; // empty object
         // $post->title = $data['title']; // assign the attribute of object
