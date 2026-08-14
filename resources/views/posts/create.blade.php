@@ -3,8 +3,21 @@
 @section('title' , 'Create Post')
 
 @section('content')
+
+
 <div class="container mt-5 p-1">
     <h1 class="mt-2" style="text-align: center;">Creat Post</h1>
+    <div>
+        @if ($errors->any())
+        <div class="alert alert-danger">
+            <ul>
+                @foreach ($errors->all() as $error)
+                <li>{{ $error }}</li>
+                @endforeach
+            </ul>
+        </div>
+        @endif
+    </div>
     <form method="POST" action="{{ route('posts.store') }}">
         @csrf
         <div class="form-floating mb-3">
@@ -25,6 +38,11 @@
 
         <button class="btn btn-success" type="submit">Create</a>
     </form>
+
 </div>
+
+
+
+
 
 @endsection

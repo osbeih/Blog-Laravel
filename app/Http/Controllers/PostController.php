@@ -7,6 +7,8 @@ use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Redirect;
 
+use function Laravel\Prompts\title;
+
 class PostController extends Controller
 {
     public function index()
@@ -51,6 +53,19 @@ class PostController extends Controller
         //     'description' => $data['description'],
         // ]);
 
+        //validate
+        $myRequest->validate(
+            [
+                'title' => ['required', 'min:3'],
+                'description' => ['required', 'min:10']
+            ],
+            // [
+            //     'title.required' => 'العنوان مطلوب',
+            //     'description.required' => 'الوصف مطلوب'
+            // ]
+
+        );
+
         ##onther Way
         Post::create($data);
         ##More Way // with this syntax we dont need fillable in a Model
@@ -58,6 +73,7 @@ class PostController extends Controller
         // $post->title = $data['title']; // assign the attribute of object
         // $post->description = $data['description'];
         // $post->save();
+
 
 
         return redirect()->route('posts.index');
