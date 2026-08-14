@@ -59,6 +59,7 @@ class PostController extends Controller
         // $post->description = $data['description'];
         // $post->save();
 
+
         return redirect()->route('posts.index');
     }
 
@@ -68,7 +69,7 @@ class PostController extends Controller
         return view('posts.edit', ['post' => $postToUpdate]);
     }
 
-    public function update(Request $request,$postId)
+    public function update(Request $request, $postId)
     {
         $edit = $request->all();
 
@@ -77,7 +78,14 @@ class PostController extends Controller
         $post->description = $edit['description'];
 
         $post->save();
-        
+
+        return redirect()->route('posts.index');
+    }
+
+    function destroy(Post $post)
+    {
+        $post->delete();
+
         return redirect()->route('posts.index');
     }
 }

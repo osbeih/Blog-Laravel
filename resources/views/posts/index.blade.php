@@ -24,7 +24,11 @@
                 <td>
                     <a class="btn btn-info btn-sm" href="{{ route('posts.show', ['post' => $post['id']]) }}">view</a>
                     <a class="btn btn-primary btn-sm" href="{{ route('posts.edit' , ['post' => $post['id']]) }}">edit</a>
-                    <a class="btn btn-danger btn-sm">delete</a>
+                    <form method="post" action="{{ route('posts.destroy', ['post' => $post->id]) }}">
+                        @csrf
+                        @method('DELETE')
+                        <button class="btn btn-danger btn-sm" type="submit">delete</button>
+                    </form>
                 </td>
             </tr>
             @endforeach

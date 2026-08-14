@@ -13,6 +13,8 @@ Route::get('/', function () {
 
 
 
+Route::delete('/post/{post}', [PostController::class, 'destroy'])->name('posts.destroy');
+
 
 Route::get('/posts/{post}/edit', [PostController::class, 'edit'])->name('posts.edit');
 
